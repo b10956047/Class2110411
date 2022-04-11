@@ -82,9 +82,24 @@ namespace _0411
             button1.Enabled = false;
 
         }
+        private string MyIP()
+        {
+            string hostname = Dns.GetHostName();
+            IPAddress[] ip = Dns.GetHostEntry(hostname).AddressList;
+            foreach (IPAddress it in ip)
+            {
+                if (it.AddressFamily == AddressFamily.InterNetwork && it.ToString() != "192.168.56.1")
+                {
+                    return it.ToString();
+                }
+            }
+            return "";
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.Text = "我的IP：" + MyIP();
             C = new ShapeContainer();//建立畫布
             this.Controls.Add(C);//加入畫布C到Form1
             D = new ShapeContainer();
