@@ -84,6 +84,15 @@ namespace _0411
             }
         }
 
+        private void Form1_MouseUp(object sender, MouseEventArgs e)
+        {
+            int Port = int.Parse(textBox_port.Text);
+            UdpClient S = new UdpClient(textBox_ip.Text, Port);
+            byte[] B = Encoding.Default.GetBytes(P);
+            S.Send(B, B.Length);
+            S.Close();
+        }
+
         private void label2_Click(object sender, EventArgs e)
         {
 
