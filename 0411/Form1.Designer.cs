@@ -36,6 +36,10 @@ namespace _0411
             this.textBox_ip = new System.Windows.Forms.TextBox();
             this.textBox_port = new System.Windows.Forms.TextBox();
             this.textBox_listenPort = new System.Windows.Forms.TextBox();
+            this.radioButton_red = new System.Windows.Forms.RadioButton();
+            this.radioButton_green = new System.Windows.Forms.RadioButton();
+            this.radioButton_blue = new System.Windows.Forms.RadioButton();
+            this.radioButton_black = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // label1
@@ -97,11 +101,60 @@ namespace _0411
             this.textBox_listenPort.Size = new System.Drawing.Size(100, 22);
             this.textBox_listenPort.TabIndex = 6;
             // 
+            // radioButton_red
+            // 
+            this.radioButton_red.AutoSize = true;
+            this.radioButton_red.Location = new System.Drawing.Point(42, 88);
+            this.radioButton_red.Name = "radioButton_red";
+            this.radioButton_red.Size = new System.Drawing.Size(38, 16);
+            this.radioButton_red.TabIndex = 7;
+            this.radioButton_red.TabStop = true;
+            this.radioButton_red.Text = "red";
+            this.radioButton_red.UseVisualStyleBackColor = true;
+            this.radioButton_red.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton_green
+            // 
+            this.radioButton_green.AutoSize = true;
+            this.radioButton_green.Location = new System.Drawing.Point(86, 88);
+            this.radioButton_green.Name = "radioButton_green";
+            this.radioButton_green.Size = new System.Drawing.Size(49, 16);
+            this.radioButton_green.TabIndex = 8;
+            this.radioButton_green.TabStop = true;
+            this.radioButton_green.Text = "green";
+            this.radioButton_green.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_blue
+            // 
+            this.radioButton_blue.AutoSize = true;
+            this.radioButton_blue.Location = new System.Drawing.Point(141, 88);
+            this.radioButton_blue.Name = "radioButton_blue";
+            this.radioButton_blue.Size = new System.Drawing.Size(43, 16);
+            this.radioButton_blue.TabIndex = 9;
+            this.radioButton_blue.TabStop = true;
+            this.radioButton_blue.Text = "blue";
+            this.radioButton_blue.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_black
+            // 
+            this.radioButton_black.AutoSize = true;
+            this.radioButton_black.Location = new System.Drawing.Point(190, 88);
+            this.radioButton_black.Name = "radioButton_black";
+            this.radioButton_black.Size = new System.Drawing.Size(48, 16);
+            this.radioButton_black.TabIndex = 10;
+            this.radioButton_black.TabStop = true;
+            this.radioButton_black.Text = "black";
+            this.radioButton_black.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(747, 450);
+            this.Controls.Add(this.radioButton_black);
+            this.Controls.Add(this.radioButton_blue);
+            this.Controls.Add(this.radioButton_green);
+            this.Controls.Add(this.radioButton_red);
             this.Controls.Add(this.textBox_listenPort);
             this.Controls.Add(this.textBox_port);
             this.Controls.Add(this.textBox_ip);
@@ -130,6 +183,10 @@ namespace _0411
         private System.Windows.Forms.TextBox textBox_ip;
         private System.Windows.Forms.TextBox textBox_port;
         private System.Windows.Forms.TextBox textBox_listenPort;
+        private System.Windows.Forms.RadioButton radioButton_red;
+        private System.Windows.Forms.RadioButton radioButton_green;
+        private System.Windows.Forms.RadioButton radioButton_blue;
+        private System.Windows.Forms.RadioButton radioButton_black;
     }
 }
 

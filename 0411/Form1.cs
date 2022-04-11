@@ -42,7 +42,8 @@ namespace _0411
             {
                 byte[] B = U.Receive(ref EP);
                 string A = Encoding.Default.GetString(B);
-                string[] Q = A.Split('/');
+                string[] Z = A.Split('_');
+                string[] Q = Z[1].Split('/');
                 Point[] R = new Point[Q.Length];
                 for(int i = 0; i < Q.Length; i++)
                 {
@@ -57,6 +58,22 @@ namespace _0411
                     L.StartPoint = R[i];
                     L.EndPoint = R[i + 1];
                     L.Parent = D;
+
+                    switch (Z[0])
+                    {
+                        case "1":
+                            L.BorderColor = Color.Red;
+                            break;
+                        case "2":
+                            L.BorderColor = Color.Lime;
+                            break;
+                        case "3":
+                            L.BorderColor = Color.Blue;
+                            break;
+                        case "4":
+                            L.BorderColor = Color.Black;
+                            break;
+                    }
                 }
             }
         }
@@ -119,6 +136,12 @@ namespace _0411
                 LineShape L = new LineShape();//建立線段物件
                 L.StartPoint = stP;//線段起點
                 L.EndPoint = e.Location;//線段終點
+
+                if (radioButton_red.Checked) { L.BorderColor = Color.Red; }
+                if (radioButton_green.Checked) { L.BorderColor = Color.Lime; }
+                if (radioButton_blue.Checked) { L.BorderColor = Color.Blue; }
+                if (radioButton_black.Checked) { L.BorderColor = Color.Black; }
+
                 L.Parent = C;//線段加入畫布C
                 stP = e.Location;//終點變起點
                 P += "/" +stP.X.ToString() + "," + stP.Y.ToString();//持續記錄座標
@@ -129,12 +152,23 @@ namespace _0411
         {
             int Port = int.Parse(textBox_port.Text);
             UdpClient S = new UdpClient(textBox_ip.Text, Port);
+
+            if (radioButton_red.Checked) { P = "1_" + P; }
+            if (radioButton_green.Checked) { P = "2_" + P; }
+            if (radioButton_blue.Checked) { P = "3_" + P; }
+            if (radioButton_black.Checked) { P = "4_" + P; }
+
             byte[] B = Encoding.Default.GetBytes(P);
             S.Send(B, B.Length);
             S.Close();
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
