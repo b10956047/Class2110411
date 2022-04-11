@@ -32,7 +32,33 @@ namespace _0411
 
         private void Listen()
         {
+            //設定監聽用的通訊埠
+            int Port = int.Parse(textBox_listenPort.Text);
+            //監聽UDP監聽器實體
+            U = new UdpClient(Port);
+            //建立本機端點資訊
+            IPEndPoint EP = new IPEndPoint(IPAddress.Parse("127.0.0.1"), Port);
+            while (true)
+            {
+                byte[] B = U.Receive(ref EP);
+                string A = Encoding.Default.GetString(B);
+                string[] Q = A.Split('/');
+                Point[] R = new Point[Q.Length];
+                for(int i = 0; i < Q.Length; i++)
+                {
+                    string[] K = Q[i].Split(',');
+                    R[i].X = int.Parse(K[0]);
+                    R[i].Y = int.Parse(K[1]);
+                }
 
+                for(int i = 0; i<Q.Length-1; i++)
+                {
+                    LineShape L = new LineShape();
+                    L.StartPoint = R[i];
+                    L.EndPoint = R[i + 1];
+                    L.Parent = D;
+                }
+            }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

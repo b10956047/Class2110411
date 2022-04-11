@@ -35,7 +35,7 @@ namespace _0411
             this.button1 = new System.Windows.Forms.Button();
             this.textBox_ip = new System.Windows.Forms.TextBox();
             this.textBox_port = new System.Windows.Forms.TextBox();
-            this.textBox_port1 = new System.Windows.Forms.TextBox();
+            this.textBox_listenPort = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -90,19 +90,19 @@ namespace _0411
             this.textBox_port.Size = new System.Drawing.Size(100, 22);
             this.textBox_port.TabIndex = 5;
             // 
-            // textBox_port1
+            // textBox_listenPort
             // 
-            this.textBox_port1.Location = new System.Drawing.Point(461, 44);
-            this.textBox_port1.Name = "textBox_port1";
-            this.textBox_port1.Size = new System.Drawing.Size(100, 22);
-            this.textBox_port1.TabIndex = 6;
+            this.textBox_listenPort.Location = new System.Drawing.Point(461, 44);
+            this.textBox_listenPort.Name = "textBox_listenPort";
+            this.textBox_listenPort.Size = new System.Drawing.Size(100, 22);
+            this.textBox_listenPort.TabIndex = 6;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(747, 450);
-            this.Controls.Add(this.textBox_port1);
+            this.Controls.Add(this.textBox_listenPort);
             this.Controls.Add(this.textBox_port);
             this.Controls.Add(this.textBox_ip);
             this.Controls.Add(this.button1);
@@ -129,7 +129,7 @@ namespace _0411
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox_ip;
         private System.Windows.Forms.TextBox textBox_port;
-        private System.Windows.Forms.TextBox textBox_port1;
+        private System.Windows.Forms.TextBox textBox_listenPort;
     }
 }
 
